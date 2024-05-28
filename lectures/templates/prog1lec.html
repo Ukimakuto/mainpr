@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Webpages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<!--CSS-->
+    <style>            
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            width: 50px;
+        }
+
+        .nav-link {
+            color: black !important;
+            font-weight: 600;
+            margin-left: 30px;
+        }
+
+        .wrapper{
+        margin: 50px auto;
+        border-radius: 10px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        box-shadow: 0 0 40px 2px rgba(0, 0, 0, 018)
+        }
+
+        .una, .pangalawa{
+            text-decoration: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: 2px solid;
+            color: white;
+            background-color: black;
+        }
+
+        .Prog1-1{
+            padding: 30px;
+        }
+
+        .Prog1-2{
+            padding: 40px;
+        }
+        .featured-box{
+        padding: 30px;
+        }
+        .featured-box h4{
+            margin: 5%;
+            margin-left: 10%;
+            color: black;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .featured-box h6{
+            margin-top: 5%;
+            margin-left: 10%;
+            color: black;
+            font-size: 20px;
+            margin-bottom: 5%;
+        }
+        .featured-box a{
+            text-decoration: none;
+            font-size: 15px;
+            color: black;
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin-top: 5%;
+            margin-left: 10%;
+            border: 2px solid;
+        }
+    </style>
+<body>
+    <!--BOOTSTRAP-->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand"><img src="{%static 'logo.png'%}"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-right">
+                  <li class="nav-item">
+                    <a class="nav-link" href="home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="prog1lec">Prog 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="prog2lec">Prog 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Contactus">Contact Us</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="logout">Logout</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </div>
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-1">
+                    <h3>W1-Orientation</h3>
+                    <button class="una" onclick="openPdf('W1 - Orientation_PROG1.pdf')">W1-Orientation</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-1">
+                    <h3>W2-Introduction to Structured Programming</h3>
+                    <button class="pangalawa" onclick="openPdf('CU1_W2_D1_PROG1_LC.pdf')">W2-Lecture 1</button>
+                    <button class="pangalawa" onclick="openPdf('CU1_W2_D2_PROG1_LC.pdf')">W2-Lecture 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-1">
+                    <h3>W3-Introduction to flowcharting and pseudo coding</h3>
+                    <button class="una" onclick="openPdf('W3_D1_PROG1.pdf')">W3-Lecture 1</button>
+                    <button class="una" onclick="openPdf('W3_D2_PROG1.pdf')">W3-Lecture 2</button>
+                    <button class="una" onclick="openPdf('W3_D3_PROG1.pdf')">W3-Lecture 3</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-1">
+                    <h3>W4-Introduction to Python_Prog1</h3>
+                    <button class="pangalawa" onclick="openPdf('W4_D1 LECTURE.pdf')">W4-Lecture 1</button>
+                    <button class="pangalawa" onclick="openPdf('W4_D2 LECTURE.pdf')">W4-Lecture 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-1">
+                    <h3>W5-Python Syntax, Variables, Data Types</h3>
+                    <button class="una" onclick="openPdf('W5_D1_Lecture.pdf')">W5-Lecture 1</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-1">
+                    <h3>W7-Python Basic Operators, Numbers, Strings, Date and Time</h3>
+                    <button class="pangalawa" onclick="openPdf('W7_T1 Lecture.pdf')">W7-Lecture 1</button>
+                    <button class="pangalawa" onclick="openPdf('W7_T2 Lecture.pdf')">W7-Lecture 2</button>
+                    <button class="pangalawa" onclick="openPdf('W7_T3 Lecture.pdf')">W7-Lecture 3</button>
+                    <button class="pangalawa" onclick="openPdf('W7_T4 Lecture.pdf')">W7-Lecture 4</button>
+                    <button class="pangalawa" onclick="openPdf('W7_T5 Lecture.pdf')">W7-Lecture 5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-1">
+                    <h3>W8-Python Lists and Tuples</h3>
+                    <button class="una" onclick="openPdf('W8_T1 Lecture Prog1_ICT2.pdf')">W8-Lecture 1</button>
+                    <button class="una" onclick="openPdf('W8_T2 Lecture Prog1_ICT2.pdf')">W8-Lecture 2</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-1">
+                    <h3>W9-Python Dictionaries and Arrays</h3>
+                    <button class="pangalawa" onclick="openPdf('W9_T1 Lecture Prog1_ICT2.pdf')">W9-Lecture 1</button>
+                    <button class="pangalawa" onclick="openPdf('W9_T2 Lecture Prog1_ICT2.pdf')">W9-Lecture 2</button>
+                    <button class="pangalawa" onclick="openPdf('W9-Python-Dictionay-and-Array-PPT.pdf')">W9-Lecture 3</button>
+                    <button class="pangalawa" onclick="openPdf('W9-sample 11-03-23.pdf')">W9-Sample</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-2">
+                    <h3>W10-Python Condition and Loops</h3>
+                    <button class="una" onclick="openPdf('W10-Conditional_Loop.pdf')">W10-Lecture 1</button>
+                    <button class="una" onclick="openPdf('W10-Conditional_loop_1.pdf')">W10-Lecture 2</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-2">
+                    <h3>W11-Python Functions</h3>
+                    <button class="pangalawa" onclick="openPdf('W11-Python-Function-PPT.pdf')">W11-Lecture 1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-2">
+                    <h3>W13-Python Modules and Packages</h3>
+                    <button class="una" onclick="openPdf('W13_T1 LECTURE Prog1_ICT2.pdf')">W13-Lecture 1</button>
+                    <button class="una" onclick="openPdf('W13_T2 LECTURE Prog1_ICT2.pdf')">W13-Lecture 2</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-2">
+                    <h3>W14-Python File Handling and Exception Handling</h3>
+                    <button class="pangalawa" onclick="openPdf('W14_T1 LECTURE.pdf')">W14-Lecture 1</button>
+                    <button class="pangalawa" onclick="openPdf('W14_T2 LECTURE.pdf')">W14-Lecture 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-2">
+                    <h3>W15-GUI Programming Tools Installations and Designer Interface</h3>
+                    <button class="una" onclick="openPdf('W15-PyQt5_PPT_Angeles.pdf')">W15-Lecture 1</button>
+                    <button class="una" onclick="openPdf('W15-PYQT5-Installing.pdf')">W15-Lecture 2</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="Prog1-2">
+                    <h3>W16-UI to Py Translation</h3>
+                    <button class="pangalawa" onclick="openPdf('W16-Demo_PPT_GUI_Manipulation.pdf')">W16-Lecture 1</button>
+                    <button class="pangalawa" onclick="openPdf('W16-Python-UI-toPY-Translation-PPT-Lagasca.pdf')">W16-Lecture 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Lectures" class="Prog1-2">
+                    <h3>W17-GUI Program Coding</h3>
+                    <button class="una" onclick="openPdf('W17-DB-CONNECTION-PPT.pdf')">W17-Lecture</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--JAVASCRIPT-->
+<script>
+     // Function to open the PDF in another tab when the button is clicked
+     function openPdf(paths) {
+        var path = "{% static 'prog1/' %}" + paths;
+        window.open(path, '_self');
+        // Attach the openPdf function to the button click event
+    }    
+       
+</script>
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="Contactus" class="featured-box">
+                    <h4> Contact Us </h4>
+                    <h6> Ahleeah Reeyo L. Alduñar </h6>
+                    <a href="mailto:ahleeahreeyo.aldunar@gsfe.tupcavite.edu.ph">ahleeahreeyo.aldunar@gsfe.tupcavite.edu.ph</a>
+                    <h6> Julieanne P. Castro </h6>
+                    <a href="mailto:julieanne.castro@gsfe.tupcavite.edu.ph">julieanne.castro@gsfe.tupcavite.edu.ph</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
